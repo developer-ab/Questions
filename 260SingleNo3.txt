@@ -1,0 +1,24 @@
+// Single Number |||
+
+
+class Solution {
+public:
+    vector<int> singleNumber(vector<int>& nums) {
+
+       unordered_map<int,int>a;
+       vector<int>arr;
+
+       for(int i=0;i<nums.size();i++)
+       {
+           a[nums[i]]++;
+       }
+
+       for(auto i:a)
+       {
+           if(i.second == 1)
+           arr.push_back(i.first);
+       }
+        
+        return arr;
+    }
+};
